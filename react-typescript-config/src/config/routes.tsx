@@ -1,32 +1,36 @@
 import Layout from "../layout";
-
 import { HomePage, LoginPage } from "../pages";
 
-const ElementCreator = ({ componentProps, ...layoutProps }) => {
-  return <Layout {...layoutProps} componentProps={componentProps} />;
+type elementCreatorPropsTypes = {
+  Component: any;
+  showHeader: boolean | undefined;
+  showNavbar: boolean | undefined;
 };
 
-export const routes = [
+interface routesType {
+  route: string;
+  Element: any;
+}
+
+const ElementCreator = () => {
+  return <div>ggffg</div>;
+};
+
+export const routes: routesType[] = [
   {
     route: "/",
-    Element: ElementCreator({
-      Component: HomePage,
-      showHeader: true,
-      showNavbar: true,
-    }),
+    Element: HomePage,
   },
   {
     route: "/login",
-    Element: ElementCreator({
-      Component: LoginPage,
-    }),
+    Element: LoginPage,
   },
 ];
 
-const allwaysShowRoutes = [];
-const beforeAuthRoutes = ["/login"];
+const allwaysShowRoutes: string[] = [];
+const beforeAuthRoutes: string[] = ["/login"];
 
-export const filterRoutesByAuthStep = (isAuth) => {
+export const filterRoutesByAuthStep = (isAuth: boolean) => {
   // eslint-disable-next-line array-callback-return
   return routes.filter((item) => {
     if (!isAuth) {
