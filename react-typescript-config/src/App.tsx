@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { filterRoutesByAuthStep } from "./config/routes";
+import { isAuthSelector } from "./store/user/auth.selectors";
 
 function App() {
-  const routes = filterRoutesByAuthStep(false);
+  const isAuth = useSelector(isAuthSelector);
+  const routes = filterRoutesByAuthStep(isAuth);
 
   return (
     <Routes>

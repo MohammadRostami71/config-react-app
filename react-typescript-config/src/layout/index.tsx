@@ -1,16 +1,16 @@
 import React from "react";
 
 interface layoutPropsType {
-  showHeader: boolean;
-  showNavbar: boolean;
+  showHeader?: boolean;
+  showNavbar?: boolean;
   children: JSX.Element | JSX.Element[];
 }
 
-const Layout = ({
+const Layout: React.FC<layoutPropsType> = ({
   showHeader = false,
   showNavbar = false,
   children,
-}: layoutPropsType) => {
+}) => {
   return (
     <div>
       {showHeader && "header"}

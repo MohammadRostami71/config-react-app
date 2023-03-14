@@ -3,27 +3,43 @@ import { HomePage, LoginPage } from "../pages";
 
 type elementCreatorPropsTypes = {
   Component: any;
-  showHeader: boolean | undefined;
-  showNavbar: boolean | undefined;
+  showHeader?: boolean;
+  showNavbar?: boolean;
 };
 
 interface routesType {
   route: string;
-  Element: any;
+  Element: JSX.Element;
 }
 
-const ElementCreator = () => {
-  return <div>ggffg</div>;
+const ElementCreator = ({
+  Component,
+  showHeader,
+  showNavbar,
+}: elementCreatorPropsTypes): JSX.Element => {
+  return (
+    <Layout showHeader={showHeader} showNavbar={showNavbar}>
+      <Component />
+    </Layout>
+  );
 };
 
 export const routes: routesType[] = [
   {
     route: "/",
-    Element: HomePage,
+    Element: ElementCreator({
+      Component: HomePage,
+      showHeader: true,
+      showNavbar: true,
+    }),
   },
   {
     route: "/login",
-    Element: LoginPage,
+    Element: ElementCreator({
+      Component: LoginPage,
+      showHeader: false,
+      showNavbar: false,
+    }),
   },
 ];
 
