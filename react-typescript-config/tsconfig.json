@@ -18,12 +18,6 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true
-    // "compilerOptions": {
-    //   "baseUrl": "./src"
-    // },
-    // "resolve": {
-    //   "extensions": [".js", ".jsx"]
-    // }
   },
   "include": ["src"]
 }
