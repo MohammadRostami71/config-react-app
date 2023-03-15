@@ -1,11 +1,12 @@
+import React from "react";
 import Layout from "../layout";
 import { HomePage, LoginPage } from "../pages";
 
-type elementCreatorPropsTypes = {
-  Component: any;
+interface elementCreatorPropsTypes {
+  Component: React.FC;
   showHeader?: boolean;
   showNavbar?: boolean;
-};
+}
 
 interface routesType {
   route: string;
