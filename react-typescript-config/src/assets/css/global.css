@@ -12,8 +12,7 @@
 }
 
 .Toastify__toast--error {
-  background-color: red !important;
-  color: #fff !important;
+  background-color: rgb(255, 184, 184) !important;
 }
 
 .Toastify__toast--success {
