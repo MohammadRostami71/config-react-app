@@ -37,8 +37,6 @@ export const routes: routesType[] = [
     route: "/login",
     Element: ElementCreator({
       Component: LoginPage,
-      showHeader: false,
-      showNavbar: false,
     }),
   },
 ];

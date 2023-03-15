@@ -1,20 +1,27 @@
+import { Button, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/user/auth.reducers";
 
+import useStyles from "./useStyles";
+
 const HomePage = () => {
   const dispatch = useDispatch();
+
+  const classes = useStyles();
 
   const logoutHandler = () => {
     dispatch(logout());
   };
 
   return (
-    <div>
-      <h1>this is home</h1>
+    <div className={classes.root}>
+      <Typography>this is home</Typography>
 
       <br />
 
-      <button onClick={logoutHandler}>logout</button>
+      <Button variant="contained" onClick={logoutHandler}>
+        logout
+      </Button>
     </div>
   );
 };
