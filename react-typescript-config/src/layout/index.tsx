@@ -1,4 +1,8 @@
+import { Box } from "@mui/material";
 import React from "react";
+import Footer from "./Footer";
+import Header from "./Header";
+import useStyles from "./useStyles";
 
 interface layoutPropsType {
   showHeader?: boolean;
@@ -11,14 +15,18 @@ const Layout: React.FC<layoutPropsType> = ({
   showNavbar = false,
   children,
 }) => {
+  const classes = useStyles();
+
   return (
-    <div>
-      {showHeader && "header"}
+    <Box className={classes.layoutContainer}>
+      <Box className={classes.componentContainer}>
+        {showHeader && <Header />}
 
-      {children}
+        {children}
+      </Box>
 
-      {showNavbar && "navbar"}
-    </div>
+      {showNavbar && <Footer />}
+    </Box>
   );
 };
 

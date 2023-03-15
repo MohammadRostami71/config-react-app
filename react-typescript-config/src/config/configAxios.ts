@@ -28,7 +28,7 @@ const onResponse = (response: AxiosResponse): AxiosResponse => {
 };
 
 const onResponseError = (error: AxiosError): Promise<AxiosError> => {
-  // call refresh token on 401 unauthorized
+  // call refresh token on 401 unauthorized and retry api with new token
   toast.error(error.message);
   return Promise.reject(error);
 };

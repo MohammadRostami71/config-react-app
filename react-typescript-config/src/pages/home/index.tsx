@@ -1,6 +1,4 @@
 import { Button, Typography } from "@mui/material";
-import axios from "axios";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/user/auth.reducers";
 
@@ -15,13 +13,9 @@ const HomePage = () => {
     dispatch(logout());
   };
 
-  useEffect(() => {
-    axios.get("/todosd").then((res) => console.log(res));
-  }, []);
-
   return (
     <div className={classes.root}>
-      <Typography>this is home</Typography>
+      <Typography>welcom to typescript config</Typography>
 
       <br />
 
